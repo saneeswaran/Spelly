@@ -16,4 +16,9 @@ class GrammerHistoryHive {
     final box = await openBox();
     await box.deleteAt(index);
   }
+
+  Future<List<GrammerHistoryHive>> loadGrammerHistory() async {
+    final box = await openBox();
+    return box.values.toList();
+  }
 }
